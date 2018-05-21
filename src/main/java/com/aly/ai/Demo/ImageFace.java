@@ -34,9 +34,9 @@ public class ImageFace {
      *             path
      * @return 返回一组坐标
      */
-    public static int BaseFace(String Base, String ImageUUID, String name) throws IOException {
+    public static int BaseFace(String Base, String ImageUUID, String name) throws IOException, InterruptedException {
         String body = "{\"type\":1 , \"content\": \"" + Base + "\"}";
-        // 请求阿里云,返回一组Json
+        // 返回一组Json
         Map map = Key.jsonObject(Util.sendPost(Key.UrlDetect, body, Key.ak_id, Key.ak_secret));
         // 把坐标转化成字符串
         String str = map.get("face_rect").toString();
@@ -76,15 +76,16 @@ public class ImageFace {
      *
      * @return 分辨率
      */
-    public static float comparisonFace(String JQImageName, String name) throws IOException {
+    public static float comparisonFace(String JQImageName, String name) throws IOException, InterruptedException {
         // 拿到原图的Base
         String imageA = Util.GetImageStrFromPath(new File(FileUtil.getUrl + "/FaceData/" + name + ".jpg"));
         // 拿到对比图的Base
         String imageB = Util.GetImageStrFromPath(new File(FileUtil.getUrl + "/FaceData/Split/" + JQImageName + ".jpg"));
         // 返回一组对比数据
         String body = "{\"type\" : 1 , \"content_1\" :\"" + imageA + "\",\"content_2\":\"" + imageB + "\"}";
-        // 通过post请求阿里云处理 
-        Map map = Key.jsonObject(Util.sendPost(Key.UrlVerify, body, Key.ak_id, Key.ak_secret));
+        // 通过post处理 
+        Map map = Key.jsonObject(Util.sendPost(Key.UrlVerify, body, Key.ak_id2, Key.ak_secret2));
+
         String str = map.get("confidence").toString();
         return Float.parseFloat(str);
     }

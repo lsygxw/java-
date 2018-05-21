@@ -10,7 +10,6 @@
  */
 package com.aly.ai.utils;
 
-import net.sf.json.JSONObject;
 import sun.misc.BASE64Encoder;
 
 import javax.crypto.Mac;
@@ -86,7 +85,6 @@ public class Util {
         df.setTimeZone(new SimpleTimeZone(0, "GMT"));
         return df.format(date);
     }
-
     /*
      * 发送POST请求
      */
@@ -232,15 +230,15 @@ public class Util {
         return result;
     }
 
-    public static void main(String[] args) throws IOException {
-        String ak_id = "LTAIuCKlVXuysIOq"; //用户ak
-        String ak_secret = "XMW9zU2jB3pHxxdCS6UsbiZiSLo23T"; // 用户ak_secret
-        String url = "https://dtplus-cn-shanghai.data.aliyuncs.com/face/detect";
-        String body = "{\"type\": 0, \"image_url\":\"http://a.hiphotos.baidu.com/baike/pic/item/bba1cd11728b471019f3d528c9cec3fdfd032371.jpg\"}";
-//        System.out.println("response body:" + );
-        JSONObject json = JSONObject.fromObject(sendPost(url, body, ak_id, ak_secret));
-        System.out.println(json.toString());
-    }
+//    public static void main(String[] args) throws IOException {
+//        String ak_id = "LTAIuCKlVXuysIOq"; //用户ak
+//        String ak_secret = "XMW9zU2jB3pHxxdCS6UsbiZiSLo23T"; // 用户ak_secret
+//        String url = "https://dtplus-cn-shanghai.data.aliyuncs.com/face/detect";
+//        String body = "{\"type\": 0, \"image_url\":\"http://a.hiphotos.baidu.com/baike/pic/item/bba1cd11728b471019f3d528c9cec3fdfd032371.jpg\"}";
+////        System.out.println("response body:" + );
+//        JSONObject json = JSONObject.fromObject(sendPost(url, body, ak_id, ak_secret));
+//        System.out.println(json.toString());
+//    }
 
     /**
      * @param imgPath

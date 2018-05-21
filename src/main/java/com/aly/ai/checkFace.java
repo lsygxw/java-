@@ -43,7 +43,7 @@ public class checkFace {
 //                // 拿到本地编码
 //                String imaged = Util.GetImageStrFromPath("/Users/apple/images/yuantu/dengchao.jpeg");
 //                String imagev = Util.GetImageStrFromPath("/Users/apple/images/jianqie/jq.jpeg");
-//                // 去阿里云匹配
+//
 //                String bodyv = "{\"type\" : 1 , \"content_1\" :\""+ imaged +"\",\"content_2\":\""+imagev+"\"}";
 //                map = Key.jsonObject(Util.sendPost(Key.UrlVerify, bodyv, Key.ak_id, Key.ak_secret));
 ////               map = object;

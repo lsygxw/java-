@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * 〈一句话功能简述〉<br> 
+ * 〈一句话功能简述〉<br>
  * 〈〉
  *
  * @author apple
@@ -30,20 +30,31 @@ public class FileUtil {
 
     public static boolean copyImage(File inputStream, String sufix, File file) throws IOException {
         BufferedImage bufferedImage = ImageIO.read(inputStream);
-        return ImageIO.write(bufferedImage,sufix,file);
+        return ImageIO.write(bufferedImage, sufix, file);
     }
 
     // 检查是否有此文件夹,如果没有则创建
-    public static int checkFile(String name){
-        File file = new File(FileUtil.getUrl +"/FaceData/" + name);
-        if(!file.exists()){
+    public synchronized static int checkFile(String name) {
+        File file = new File(FileUtil.getUrl + "/FaceData/" + name);
+        if (!file.exists()) {
             file.mkdirs();
             System.out.println("------------------------");
             System.out.println("-                      -");
-            System.out.println("-      已创建"+name+"目录");
+            System.out.println("-      已创建" + name + "目录");
             System.out.println("-                      -");
             System.out.println("------------------------");
             return 1;
+        }
+        return 0;
+    }
+
+    public static int checkFileName(String path, String name) {
+        File file = new File(path);
+        String[] files = file.list();//遍历该文件夹
+        for (String i : files) {
+            if(i.equals(name)){
+                return 1;
+            }
         }
         return 0;
     }
