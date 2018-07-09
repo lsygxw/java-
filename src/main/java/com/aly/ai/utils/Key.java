@@ -22,16 +22,16 @@ import net.sf.json.JSONObject;
  */
 public class Key {
 
-    public static final String ak_id = "LTAIuCKlVXuysIOq";       //用户ak
-    public static final String ak_secret = "XMW9zU2jB3pHxxdCS6UsbiZiSLo23T"; // 用户ak_secret
-    public static final String ak_id2 = "LTAICfQgEd9YcDAJ";
-    public static final String ak_secret2 = "SabZ2EMTfE2gaxItNmtCLFOFz296e2";
-    public static final String ak_id3 = "LTAIKT1wWqY40DwT";
-    public static final String ak_secret3 = "ctvDbOCxxDn0JnN6Gw4rKcSYy2Nac8";
-    public static final String ak_id4 = "LTAISish02NMCSKP";
-    public static final String ak_secret4 = "IAApeVmbBe1c4x8410s0VMRCNHxAQH";
-    public static final String ak_id5 = "LTAI7F2n1LVK0ljX";
-    public static final String ak_secret5 = "DRx2TMewtOxfCT6aHO2NHummc7UAQ1";
+    public static final String ak_id = "";       //用户ak
+    public static final String ak_secret = ""; // 用户ak_secret
+    public static final String ak_id2 = "";
+    public static final String ak_secret2 = "";
+    public static final String ak_id3 = "";
+    public static final String ak_secret3 = "";
+    public static final String ak_id4 = "";
+    public static final String ak_secret4 = "";
+    public static final String ak_id5 = "";
+    public static final String ak_secret5 = "";
 
     public static String[][] getKeySecret = new String[][]{{ak_id, ak_secret},{ak_id2, ak_secret2}, {ak_id3, ak_secret3}, {ak_id4, ak_secret4}, {ak_id5, ak_secret5}};
 
